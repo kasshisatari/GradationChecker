@@ -1,0 +1,2 @@
+# GradationChecker
+ASSのグラデーション効果をプレビューする
