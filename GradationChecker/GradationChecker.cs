@@ -213,7 +213,7 @@ namespace GradationChecker
                 int leftTopG = GetG(leftTopText.Text);
                 int leftTopB = GetB(leftTopText.Text);
                 int rightTopR = GetR(rightTopText.Text);
-                int rigthtTopG = GetG(rightTopText.Text);
+                int rightTopG = GetG(rightTopText.Text);
                 int rightTopB = GetB(rightTopText.Text);
                 int leftBottomR = GetR(leftBottomText.Text);
                 int leftBottomG = GetG(leftBottomText.Text);
@@ -230,7 +230,7 @@ namespace GradationChecker
                         double t = (double)y / (double)HEIGHT;
                         Color c = Color.FromArgb(
                             (int)((1 - s) * (1 - t) * leftTopR + s * (1 - t) * rightTopR + (1 - s) * t * leftBottomR + s * t * rightBottomR),
-                            (int)((1 - s) * (1 - t) * leftTopG + s * (1 - t) * rigthtTopG + (1 - s) * t * leftBottomG + s * t * rightBottomG),
+                            (int)((1 - s) * (1 - t) * leftTopG + s * (1 - t) * rightTopG + (1 - s) * t * leftBottomG + s * t * rightBottomG),
                             (int)((1 - s) * (1 - t) * leftTopB + s * (1 - t) * rightTopB + (1 - s) * t * leftBottomB + s * t * rightBottomB)
                         );
                         img.SetPixel(x, y, c);
@@ -248,7 +248,23 @@ namespace GradationChecker
         private void leftTopButton_Click(object sender, EventArgs e)
         {
             ColorDialog cd = new ColorDialog();
+            int r = 0;
+            int g = 0;
+            int b = 0;
+            try
+            {
+                r = GetR(leftTopText.Text);
+                g = GetG(leftTopText.Text);
+                b = GetB(leftTopText.Text);
+            }
+            catch
+            {
+                r = 0;
+                g = 0;
+                b = 0;
+            }
             cd.FullOpen = true;
+            cd.Color = Color.FromArgb(r, g, b);
             if (cd.ShowDialog() == DialogResult.OK)
             {
                 leftTopText.Text = "&H" + cd.Color.B.ToString("X2") + cd.Color.G.ToString("X2") + cd.Color.R.ToString("X2") +  "&";
@@ -259,7 +275,23 @@ namespace GradationChecker
         private void rightTopButton_Click(object sender, EventArgs e)
         {
             ColorDialog cd = new ColorDialog();
+            int r = 0;
+            int g = 0;
+            int b = 0;
+            try
+            {
+                r = GetR(rightTopText.Text);
+                g = GetG(rightTopText.Text);
+                b = GetB(rightTopText.Text);
+            }
+            catch
+            {
+                r = 0;
+                g = 0;
+                b = 0;
+            }
             cd.FullOpen = true;
+            cd.Color = Color.FromArgb(r, g, b);
             if (cd.ShowDialog() == DialogResult.OK)
             {
                 rightTopText.Text = "&H" + cd.Color.B.ToString("X2") + cd.Color.G.ToString("X2") + cd.Color.R.ToString("X2") + "&";
@@ -270,7 +302,23 @@ namespace GradationChecker
         private void leftBottomButton_Click(object sender, EventArgs e)
         {
             ColorDialog cd = new ColorDialog();
+            int r = 0;
+            int g = 0;
+            int b = 0;
+            try
+            {
+                r = GetR(leftBottomText.Text);
+                g = GetG(leftBottomText.Text);
+                b = GetB(leftBottomText.Text);
+            }
+            catch
+            {
+                r = 0;
+                g = 0;
+                b = 0;
+            }
             cd.FullOpen = true;
+            cd.Color = Color.FromArgb(r, g, b);
             if (cd.ShowDialog() == DialogResult.OK)
             {
                 leftBottomText.Text = "&H" + cd.Color.B.ToString("X2") + cd.Color.G.ToString("X2") + cd.Color.R.ToString("X2") + "&";
@@ -281,7 +329,23 @@ namespace GradationChecker
         private void rightBottomButton_Click(object sender, EventArgs e)
         {
             ColorDialog cd = new ColorDialog();
+            int r = 0;
+            int g = 0;
+            int b = 0;
+            try
+            {
+                r = GetR(rightBottomText.Text);
+                g = GetG(rightBottomText.Text);
+                b = GetB(rightBottomText.Text);
+            }
+            catch
+            {
+                r = 0;
+                g = 0;
+                b = 0;
+            }
             cd.FullOpen = true;
+            cd.Color = Color.FromArgb(r, g, b);
             if (cd.ShowDialog() == DialogResult.OK)
             {
                 rightBottomText.Text = "&H" + cd.Color.B.ToString("X2") + cd.Color.G.ToString("X2") + cd.Color.R.ToString("X2") + "&";
