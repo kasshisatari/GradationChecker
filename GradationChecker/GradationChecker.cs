@@ -40,10 +40,12 @@ namespace GradationChecker
 {
     public partial class GradationForm : Form
     {
+        private ColorDialog cd = null;
         public GradationForm()
         {
             InitializeComponent();
             UpdatePreview();
+            cd = new ColorDialog();
         }
 
         private int GetR(string str)
@@ -247,7 +249,6 @@ namespace GradationChecker
 
         private void leftTopButton_Click(object sender, EventArgs e)
         {
-            ColorDialog cd = new ColorDialog();
             int r = 0;
             int g = 0;
             int b = 0;
@@ -274,7 +275,6 @@ namespace GradationChecker
 
         private void rightTopButton_Click(object sender, EventArgs e)
         {
-            ColorDialog cd = new ColorDialog();
             int r = 0;
             int g = 0;
             int b = 0;
@@ -301,7 +301,6 @@ namespace GradationChecker
 
         private void leftBottomButton_Click(object sender, EventArgs e)
         {
-            ColorDialog cd = new ColorDialog();
             int r = 0;
             int g = 0;
             int b = 0;
@@ -328,7 +327,6 @@ namespace GradationChecker
 
         private void rightBottomButton_Click(object sender, EventArgs e)
         {
-            ColorDialog cd = new ColorDialog();
             int r = 0;
             int g = 0;
             int b = 0;
