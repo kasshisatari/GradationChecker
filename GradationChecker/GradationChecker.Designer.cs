@@ -157,6 +157,7 @@ namespace GradationChecker
             this.resultText.ReadOnly = true;
             this.resultText.Size = new System.Drawing.Size(527, 25);
             this.resultText.TabIndex = 8;
+            this.resultText.Click += new System.EventHandler(this.resultText_Click);
             // 
             // previewButton
             // 

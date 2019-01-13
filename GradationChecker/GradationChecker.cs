@@ -355,5 +355,10 @@ namespace GradationChecker
         {
             UpdatePreview();
         }
+
+        private void resultText_Click(object sender, EventArgs e)
+        {
+            resultText.SelectAll();
+        }
     }
 }
