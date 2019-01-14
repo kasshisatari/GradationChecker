@@ -85,6 +85,7 @@ namespace GradationChecker
             this.leftTopText.Size = new System.Drawing.Size(116, 25);
             this.leftTopText.TabIndex = 5;
             this.leftTopText.Text = "&HFFFFFF&";
+            this.leftTopText.Click += new System.EventHandler(this.leftTopText_Click);
             // 
             // rightTopText
             // 
@@ -93,6 +94,7 @@ namespace GradationChecker
             this.rightTopText.Size = new System.Drawing.Size(116, 25);
             this.rightTopText.TabIndex = 5;
             this.rightTopText.Text = "&HFFFFFF&";
+            this.rightTopText.Click += new System.EventHandler(this.rightTopText_Click);
             // 
             // leftBottomText
             // 
@@ -101,6 +103,7 @@ namespace GradationChecker
             this.leftBottomText.Size = new System.Drawing.Size(116, 25);
             this.leftBottomText.TabIndex = 5;
             this.leftBottomText.Text = "&HFFFFFF&";
+            this.leftBottomText.Click += new System.EventHandler(this.leftBottomText_Click);
             // 
             // rightBottomText
             // 
@@ -109,6 +112,7 @@ namespace GradationChecker
             this.rightBottomText.Size = new System.Drawing.Size(116, 25);
             this.rightBottomText.TabIndex = 5;
             this.rightBottomText.Text = "&HFFFFFF&";
+            this.rightBottomText.Click += new System.EventHandler(this.rightBottomText_Click);
             // 
             // leftTopButton
             // 

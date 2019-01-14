@@ -360,5 +360,25 @@ namespace GradationChecker
         {
             resultText.SelectAll();
         }
+
+        private void leftTopText_Click(object sender, EventArgs e)
+        {
+            leftTopText.SelectAll();
+        }
+
+        private void rightTopText_Click(object sender, EventArgs e)
+        {
+            rightTopText.SelectAll();
+        }
+
+        private void leftBottomText_Click(object sender, EventArgs e)
+        {
+            leftBottomText.SelectAll();
+        }
+
+        private void rightBottomText_Click(object sender, EventArgs e)
+        {
+            rightBottomText.SelectAll();
+        }
     }
 }
