@@ -41,6 +41,10 @@ namespace GradationChecker
     public partial class GradationForm : Form
     {
         private ColorDialog cd = null;
+        private static Bitmap bitmap = new Bitmap(400, 400);
+        private static Graphics graphics = Graphics.FromImage(bitmap);
+        private static string stopCaption = "Press Q";
+        private static string startCaption = "Spuit";
         public GradationForm()
         {
             InitializeComponent();
@@ -379,6 +383,91 @@ namespace GradationChecker
         private void rightBottomText_Click(object sender, EventArgs e)
         {
             rightBottomText.SelectAll();
+        }
+
+        private string PreviewSpuit()
+        {
+            int width = previewBox.Size.Width;
+            int height = previewBox.Size.Height;
+            Bitmap img = new Bitmap(width, height);
+            while (GetAsyncKeyState('Q') == 0)
+            {
+                graphics.CopyFromScreen(
+                    Cursor.Position.X - (width / 2), Cursor.Position.Y - (height / 2), 
+                    0, 0, 
+                    new Size(width, height));
+                graphics.DrawLine(
+                    Pens.Black, 
+                    width * 1 / 4, height / 2, 
+                    width * 3 / 4, height / 2);
+                graphics.DrawLine(
+                    Pens.Black, 
+                    width / 2, height * 1 / 4, 
+                    width / 2, height * 3 / 4);
+                for (int y = 0; y < height; ++y)
+                {
+                    for (int x = 0; x < width; x++)
+                    {
+                        img.SetPixel(x, y, bitmap.GetPixel(x, y));
+                    }
+                }
+                previewBox.Image = img;
+                previewBox.Refresh();
+                Task.Delay(100);
+            }
+            graphics.CopyFromScreen(Cursor.Position.X, Cursor.Position.Y, 0, 0, new Size(1, 1));
+            Color color = bitmap.GetPixel(0, 0);
+            return "&H" + color.B.ToString("X2") + color.G.ToString("X2") + color.R.ToString("X2") + "&";
+        }
+
+        [System.Runtime.InteropServices.DllImport("User32.dll")]
+        public static extern short GetAsyncKeyState(int vKey);
+        private void leftTopSpuitButton_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Cross;
+            leftTopSpuitButton.Text = stopCaption;
+            leftTopSpuitButton.Refresh();
+            leftTopText.Text = PreviewSpuit();
+            Cursor = Cursors.Arrow;
+            leftTopSpuitButton.Text = startCaption;
+            leftTopSpuitButton.Refresh();
+            UpdatePreview();
+        }
+
+        private void rightTopSpuitButton_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Cross;
+            rightTopSpuitButton.Text = stopCaption;
+            rightTopSpuitButton.Refresh();
+            rightTopText.Text = PreviewSpuit();
+            Cursor = Cursors.Arrow;
+            rightTopSpuitButton.Text = startCaption;
+            rightTopSpuitButton.Refresh();
+            UpdatePreview();
+        }
+
+        private void leftBottomSpuitButton_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Cross;
+            leftBottomSpuitButton.Text = stopCaption;
+            leftBottomSpuitButton.Refresh();
+            leftBottomText.Text = PreviewSpuit();
+            Cursor = Cursors.Arrow;
+            leftBottomSpuitButton.Text = startCaption;
+            leftBottomSpuitButton.Refresh();
+            UpdatePreview();
+        }
+
+        private void rightBottomSpuitButton_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Cross;
+            rightBottomSpuitButton.Text = stopCaption;
+            rightBottomSpuitButton.Refresh();
+            rightBottomText.Text = PreviewSpuit();
+            Cursor = Cursors.Arrow;
+            rightBottomSpuitButton.Text = startCaption;
+            rightBottomSpuitButton.Refresh();
+            UpdatePreview();
         }
     }
 }

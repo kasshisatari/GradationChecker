@@ -67,6 +67,10 @@ namespace GradationChecker
             this.rightBottomButton = new System.Windows.Forms.Button();
             this.resultText = new System.Windows.Forms.TextBox();
             this.previewButton = new System.Windows.Forms.Button();
+            this.leftTopSpuitButton = new System.Windows.Forms.Button();
+            this.rightTopSpuitButton = new System.Windows.Forms.Button();
+            this.leftBottomSpuitButton = new System.Windows.Forms.Button();
+            this.rightBottomSpuitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.previewBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +84,7 @@ namespace GradationChecker
             // 
             // leftTopText
             // 
-            this.leftTopText.Location = new System.Drawing.Point(645, 43);
+            this.leftTopText.Location = new System.Drawing.Point(670, 42);
             this.leftTopText.Name = "leftTopText";
             this.leftTopText.Size = new System.Drawing.Size(116, 25);
             this.leftTopText.TabIndex = 5;
@@ -89,7 +93,7 @@ namespace GradationChecker
             // 
             // rightTopText
             // 
-            this.rightTopText.Location = new System.Drawing.Point(645, 103);
+            this.rightTopText.Location = new System.Drawing.Point(670, 103);
             this.rightTopText.Name = "rightTopText";
             this.rightTopText.Size = new System.Drawing.Size(116, 25);
             this.rightTopText.TabIndex = 5;
@@ -98,7 +102,7 @@ namespace GradationChecker
             // 
             // leftBottomText
             // 
-            this.leftBottomText.Location = new System.Drawing.Point(645, 158);
+            this.leftBottomText.Location = new System.Drawing.Point(670, 158);
             this.leftBottomText.Name = "leftBottomText";
             this.leftBottomText.Size = new System.Drawing.Size(116, 25);
             this.leftBottomText.TabIndex = 5;
@@ -107,7 +111,7 @@ namespace GradationChecker
             // 
             // rightBottomText
             // 
-            this.rightBottomText.Location = new System.Drawing.Point(645, 214);
+            this.rightBottomText.Location = new System.Drawing.Point(670, 214);
             this.rightBottomText.Name = "rightBottomText";
             this.rightBottomText.Size = new System.Drawing.Size(116, 25);
             this.rightBottomText.TabIndex = 5;
@@ -118,7 +122,7 @@ namespace GradationChecker
             // 
             this.leftTopButton.Location = new System.Drawing.Point(436, 41);
             this.leftTopButton.Name = "leftTopButton";
-            this.leftTopButton.Size = new System.Drawing.Size(166, 28);
+            this.leftTopButton.Size = new System.Drawing.Size(115, 28);
             this.leftTopButton.TabIndex = 7;
             this.leftTopButton.Text = "Left Top";
             this.leftTopButton.UseVisualStyleBackColor = true;
@@ -128,7 +132,7 @@ namespace GradationChecker
             // 
             this.rightTopButton.Location = new System.Drawing.Point(436, 100);
             this.rightTopButton.Name = "rightTopButton";
-            this.rightTopButton.Size = new System.Drawing.Size(166, 28);
+            this.rightTopButton.Size = new System.Drawing.Size(115, 28);
             this.rightTopButton.TabIndex = 7;
             this.rightTopButton.Text = "Right Top";
             this.rightTopButton.UseVisualStyleBackColor = true;
@@ -138,7 +142,7 @@ namespace GradationChecker
             // 
             this.leftBottomButton.Location = new System.Drawing.Point(436, 158);
             this.leftBottomButton.Name = "leftBottomButton";
-            this.leftBottomButton.Size = new System.Drawing.Size(166, 28);
+            this.leftBottomButton.Size = new System.Drawing.Size(115, 28);
             this.leftBottomButton.TabIndex = 7;
             this.leftBottomButton.Text = "Left Bottom";
             this.leftBottomButton.UseVisualStyleBackColor = true;
@@ -148,7 +152,7 @@ namespace GradationChecker
             // 
             this.rightBottomButton.Location = new System.Drawing.Point(436, 214);
             this.rightBottomButton.Name = "rightBottomButton";
-            this.rightBottomButton.Size = new System.Drawing.Size(166, 28);
+            this.rightBottomButton.Size = new System.Drawing.Size(115, 28);
             this.rightBottomButton.TabIndex = 7;
             this.rightBottomButton.Text = "Right Bottom";
             this.rightBottomButton.UseVisualStyleBackColor = true;
@@ -165,13 +169,53 @@ namespace GradationChecker
             // 
             // previewButton
             // 
-            this.previewButton.Location = new System.Drawing.Point(792, 63);
+            this.previewButton.Location = new System.Drawing.Point(823, 73);
             this.previewButton.Name = "previewButton";
             this.previewButton.Size = new System.Drawing.Size(159, 151);
             this.previewButton.TabIndex = 9;
             this.previewButton.Text = "Preview";
             this.previewButton.UseVisualStyleBackColor = true;
             this.previewButton.Click += new System.EventHandler(this.previewButton_Click);
+            // 
+            // leftTopSpuitButton
+            // 
+            this.leftTopSpuitButton.Location = new System.Drawing.Point(557, 40);
+            this.leftTopSpuitButton.Name = "leftTopSpuitButton";
+            this.leftTopSpuitButton.Size = new System.Drawing.Size(107, 28);
+            this.leftTopSpuitButton.TabIndex = 7;
+            this.leftTopSpuitButton.Text = "Spuit";
+            this.leftTopSpuitButton.UseVisualStyleBackColor = true;
+            this.leftTopSpuitButton.Click += new System.EventHandler(this.leftTopSpuitButton_Click);
+            // 
+            // rightTopSpuitButton
+            // 
+            this.rightTopSpuitButton.Location = new System.Drawing.Point(557, 100);
+            this.rightTopSpuitButton.Name = "rightTopSpuitButton";
+            this.rightTopSpuitButton.Size = new System.Drawing.Size(107, 28);
+            this.rightTopSpuitButton.TabIndex = 7;
+            this.rightTopSpuitButton.Text = "Spuit";
+            this.rightTopSpuitButton.UseVisualStyleBackColor = true;
+            this.rightTopSpuitButton.Click += new System.EventHandler(this.rightTopSpuitButton_Click);
+            // 
+            // leftBottomSpuitButton
+            // 
+            this.leftBottomSpuitButton.Location = new System.Drawing.Point(557, 158);
+            this.leftBottomSpuitButton.Name = "leftBottomSpuitButton";
+            this.leftBottomSpuitButton.Size = new System.Drawing.Size(107, 28);
+            this.leftBottomSpuitButton.TabIndex = 7;
+            this.leftBottomSpuitButton.Text = "Spuit";
+            this.leftBottomSpuitButton.UseVisualStyleBackColor = true;
+            this.leftBottomSpuitButton.Click += new System.EventHandler(this.leftBottomSpuitButton_Click);
+            // 
+            // rightBottomSpuitButton
+            // 
+            this.rightBottomSpuitButton.Location = new System.Drawing.Point(557, 214);
+            this.rightBottomSpuitButton.Name = "rightBottomSpuitButton";
+            this.rightBottomSpuitButton.Size = new System.Drawing.Size(107, 28);
+            this.rightBottomSpuitButton.TabIndex = 7;
+            this.rightBottomSpuitButton.Text = "Spuit";
+            this.rightBottomSpuitButton.UseVisualStyleBackColor = true;
+            this.rightBottomSpuitButton.Click += new System.EventHandler(this.rightBottomSpuitButton_Click);
             // 
             // GradationForm
             // 
@@ -183,6 +227,10 @@ namespace GradationChecker
             this.Controls.Add(this.rightBottomButton);
             this.Controls.Add(this.leftBottomButton);
             this.Controls.Add(this.rightTopButton);
+            this.Controls.Add(this.rightBottomSpuitButton);
+            this.Controls.Add(this.leftBottomSpuitButton);
+            this.Controls.Add(this.rightTopSpuitButton);
+            this.Controls.Add(this.leftTopSpuitButton);
             this.Controls.Add(this.leftTopButton);
             this.Controls.Add(this.rightBottomText);
             this.Controls.Add(this.leftBottomText);
@@ -210,6 +258,10 @@ namespace GradationChecker
         private System.Windows.Forms.Button rightBottomButton;
         private System.Windows.Forms.TextBox resultText;
         private System.Windows.Forms.Button previewButton;
+        private System.Windows.Forms.Button leftTopSpuitButton;
+        private System.Windows.Forms.Button rightTopSpuitButton;
+        private System.Windows.Forms.Button leftBottomSpuitButton;
+        private System.Windows.Forms.Button rightBottomSpuitButton;
     }
 }
 
