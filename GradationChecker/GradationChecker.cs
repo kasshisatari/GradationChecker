@@ -43,13 +43,15 @@ namespace GradationChecker
         private ColorDialog cd = null;
         private static Bitmap bitmap = new Bitmap(400, 400);
         private static Graphics graphics = Graphics.FromImage(bitmap);
-        private static string stopCaption = "Press Q";
+        private static string stopCaption = "Press N";
         private static string startCaption = "Spuit";
         public GradationForm()
         {
             InitializeComponent();
             UpdatePreview();
             cd = new ColorDialog();
+            bitmap = new Bitmap(previewBox.Size.Width, previewBox.Size.Height);
+            graphics = Graphics.FromImage(bitmap);
         }
 
         private int GetR(string str)
@@ -390,7 +392,7 @@ namespace GradationChecker
             int width = previewBox.Size.Width;
             int height = previewBox.Size.Height;
             Bitmap img = new Bitmap(width, height);
-            while (GetAsyncKeyState('Q') == 0)
+            while (GetAsyncKeyState('N') == 0)
             {
                 graphics.CopyFromScreen(
                     Cursor.Position.X - (width / 2), Cursor.Position.Y - (height / 2), 
@@ -413,6 +415,7 @@ namespace GradationChecker
                 }
                 previewBox.Image = img;
                 previewBox.Refresh();
+                Application.DoEvents();
                 Task.Delay(100);
             }
             graphics.CopyFromScreen(Cursor.Position.X, Cursor.Position.Y, 0, 0, new Size(1, 1));
